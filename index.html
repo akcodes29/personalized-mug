@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Coffee Mug</title>
+<style>
+  .mug {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    margin: 20px;
+    display: inline-block;
+  }
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets\style.css">
+</head>
+<body>
+<h1>Custom Coffee Mug</h1>
+<div class="mug" id="mug">
+  <div id="design">Design</div>
+  <div id="text">Text</div>
+</div>
+<form id="customization-form">
+  <label for="color">Select Color:</label>
+  <select id="color" name="color">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select><br>
+
+  <label for="design">Select Design:</label>
+  <select id="design" name="design">
+    <option value="heart">Heart</option>
+    <option value="star">Star</option>
+    <option value="coffee">Coffee</option>
+  </select><br>
+
+  <label for="customText">Custom Text:</label>
+  <input type="text" id="customText" name="customText"><br>
+
+  <button type="button" id="updateMug">Update Mug</button>
+  <button type="button" id="purchase">Purchase</button>
+</form>
+
+<script>
+  const mugElement = document.getElementById('mug');
+  const colorSelect = document.getElementById('color');
+  const designSelect = document.getElementById('design');
+  const customTextElement = document.getElementById('customText');
+  const updateButton = document.getElementById('updateMug');
+  const purchaseButton = document.getElementById('purchase');
+
+  updateButton.addEventListener('click', updateMug);
+  purchaseButton.addEventListener('click', purchaseMug);
+
+  function updateMug() {
+    const selectedColor = colorSelect.value;
+    const selectedDesign = designSelect.value;
+    const customText = customTextElement.value;
+
+    mugElement.style.backgroundColor = selectedColor;
+    mugElement.innerHTML = `<div id="design">${selectedDesign}</div><div id="text">${customText}</div>`;
+  }
+
+  function purchaseMug() {
+    const selectedColor = colorSelect.value;
+    const selectedDesign = designSelect.value;
+    const customText = customTextElement.value;
+
+    // Perform purchase logic here, e.g., send data to a server, calculate price, etc.
+    alert(`Congratulations! You have purchased a custom coffee mug:\nColor: ${selectedColor}\nDesign: ${selectedDesign}\nText: ${customText}`);
+  }
+</script>
+</body>
+</html>
