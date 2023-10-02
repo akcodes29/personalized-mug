@@ -1,0 +1,23 @@
+{
+  "name": "personalized-mug",
+  "version": "1.0.0",
+  "description": "This site is for customers to design their own custom mug.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akcodes29/personalized-mug.git"
+  },
+  "author": "A.Keriazes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akcodes29/personalized-mug/issues"
+  },
+  "homepage": "https://github.com/akcodes29/personalized-mug#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
